@@ -25,8 +25,7 @@ public class TeleportOnContact : MonoBehaviour
             // Instancie le GameObject correspondant à l'index aléatoire
             GameObject spawnedObject = Instantiate(routesListe[randomIndex], teleportTarget.position, teleportTarget.rotation);
 
-            // Optionnel : modifie le parent du GameObject instancié
-            spawnedObject.transform.parent = transform;
+            Destroy(other.gameObject);
         }
         else
         {
