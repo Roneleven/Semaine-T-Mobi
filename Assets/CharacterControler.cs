@@ -16,14 +16,13 @@ public class CharacterControler : MonoBehaviour
         // when q is pressed, move left
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Translate(-0.1f, 0, 0);
+            transform.Translate(0, 0, -0.1f);
         }
         // when d is pressed, move right
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(0.1f, 0, 0);
+            transform.Translate(0, 0, 0.1f);
         }
         //move foward automatically
-        transform.Translate(0, 0, 0.1f);
     }
 }
