@@ -132,7 +132,7 @@ namespace Lean.Touch
 
 			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(transform.parent as RectTransform, screenPoint, finalCamera, out worldPoint) == true)
 			{
-				transform.position = worldPoint;
+				transform.position = new Vector3(worldPoint.x, transform.position.y, worldPoint.z);	
 			}
 		}
 

@@ -8,7 +8,7 @@ public class MoveFoward : MonoBehaviour
     void Update()
     {
         //move foward automatically with delta time
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.position += (Vector3.forward * speed * Time.deltaTime);
 
     }
 }

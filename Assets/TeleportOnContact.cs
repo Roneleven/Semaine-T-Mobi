@@ -12,7 +12,7 @@ public class TeleportOnContact : MonoBehaviour
         {
             // Teleport the colliding object to the target position
             other.transform.position = teleportTarget.position;
-            Debug.Log("Teleported " + other.name);
+            //Debug.Log("Teleported " + other.name);
         }
     }
 }
