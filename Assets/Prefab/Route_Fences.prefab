@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325931959452699228}
-  - component: {fileID: 7698300375337038617}
-  - component: {fileID: 1952719820276390427}
+  - component: {fileID: 5658276029532012433}
+  - component: {fileID: 6650707916037396064}
   m_Layer: 0
   m_Name: Route_Fences
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7698300375337038617
+--- !u!65 &5658276029532012433
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325931959452699219}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.44994, y: 1.1826767, z: 40.133163}
-  m_Center: {x: 0, y: 0.48713762, z: 20.02626}
---- !u!54 &1952719820276390427
+  m_Size: {x: 27.909206, y: 1, z: 38.040436}
+  m_Center: {x: 0.8347912, y: 0, z: 17.353004}
+--- !u!54 &6650707916037396064
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,22 +125,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4d342bd3e65462841840e59d661548cf, type: 3}
   m_PrefabInstance: {fileID: 2409674875787978863}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3292566020032271678 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d342bd3e65462841840e59d661548cf, type: 3}
-  m_PrefabInstance: {fileID: 2409674875787978863}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &3586599682992852670
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292566020032271678}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 448404196040243022, guid: 4d342bd3e65462841840e59d661548cf, type: 3}

@@ -3,6 +3,8 @@ using UnityEngine;
 public class TeleportOnContact : MonoBehaviour
 {
     public Transform teleportTarget; // The empty transform to teleport to
+    [SerializeField]
+    private Transform containerRoutes;
 
     public GameObject[] routesListe; // Tableau de GameObjects
 
@@ -12,24 +14,21 @@ public class TeleportOnContact : MonoBehaviour
         Debug.Log("Trigger entered");
         if (other.CompareTag("Road"))
         {
-            // Teleport the colliding object to the target position
-            other.transform.position = teleportTarget.position;
-            //Debug.Log("Teleported " + other.name);
-        }
-        // Vérifie si la liste n'est pas vide
-        if (routesListe.Length > 0 && teleportTarget != null)
-        {
-            // Génère un index aléatoire pour la liste
-            int randomIndex = Random.Range(0, routesListe.Length);
+            // Vérifie si la liste n'est pas vide
+            if (routesListe.Length > 0)
+            {
+                
+                // Génère un index aléatoire pour la liste
+                int randomIndex = Random.Range(0, routesListe.Length);
 
-            // Instancie le GameObject correspondant à l'index aléatoire
-            GameObject spawnedObject = Instantiate(routesListe[randomIndex], teleportTarget.position, teleportTarget.rotation);
-
-            Destroy(other.gameObject);
-        }
-        else
-        {
-            Debug.LogWarning("La liste de GameObjects ou le point de spawn est vide !");
+                // Instancie le GameObject correspondant à l'index aléatoire
+                GameObject spawnedObject = Instantiate(routesListe[randomIndex], teleportTarget.position, teleportTarget.rotation, containerRoutes);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("La liste de GameObjects ou le point de spawn est vide !");
+            }
         }
     }
 }
