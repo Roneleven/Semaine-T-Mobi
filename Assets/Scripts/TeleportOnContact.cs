@@ -17,7 +17,6 @@ public class TeleportOnContact : MonoBehaviour
             // Vérifie si la liste n'est pas vide
             if (routesListe.Length > 0)
             {
-                
                 // Génère un index aléatoire pour la liste
                 int randomIndex = Random.Range(0, routesListe.Length);
 
