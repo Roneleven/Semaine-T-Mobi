@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353162002}
   m_Layer: 0
-  m_Name: PlayerPos
+  m_Name: Player Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 1683813588}
   - component: {fileID: 1683813590}
   m_Layer: 0
-  m_Name: Collision Gauche
+  m_Name: Trigger Gauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1327,7 +1327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683813585}
   m_LocalRotation: {x: -0.26453793, y: 0, z: 0, w: 0.9643753}
-  m_LocalPosition: {x: -10.999999, y: -16.38119, z: 13.624343}
+  m_LocalPosition: {x: -11.000045, y: -16.380838, z: 13.624936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1374,20 +1374,32 @@ MonoBehaviour:
           m_StringArgument: GDrift
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1683813590}
+        m_TargetAssemblyTypeName: AnimatorControl, Assembly-CSharp
+        m_MethodName: SetParameterValue0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   TriggerExitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Update
-        m_Mode: 4
+      - m_Target: {fileID: 1683813590}
+        m_TargetAssemblyTypeName: AnimatorControl, Assembly-CSharp
+        m_MethodName: SetParameterValue1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 1
           m_StringArgument: ok
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   reactToTags:
   - Player
@@ -1416,27 +1428,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683813585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b4ab1f22360214b8bd0f65f6c61d77, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c74e0696e282b46abf43fe43f4b1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheAnimator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  paramIntegerName:
-  - DTo-Idle
-  paramIntegerValue: 01000000
+  animator: {fileID: 636801714}
+  parameterName:
+  - To Idle
+  - To Idle
+  parameterValue: 0000000001000000
 --- !u!1 &1871460621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,8 +1865,9 @@ GameObject:
   - component: {fileID: 2040898897}
   - component: {fileID: 2040898899}
   - component: {fileID: 2040898898}
+  - component: {fileID: 2040898900}
   m_Layer: 0
-  m_Name: Collision Droite
+  m_Name: Trigger Droite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1928,9 +1928,33 @@ MonoBehaviour:
           m_StringArgument: DDrift
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2040898900}
+        m_TargetAssemblyTypeName: AnimatorControl, Assembly-CSharp
+        m_MethodName: SetParameterValue0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   TriggerExitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2040898900}
+        m_TargetAssemblyTypeName: AnimatorControl, Assembly-CSharp
+        m_MethodName: SetParameterValue1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   reactToTags:
   - Player
 --- !u!54 &2040898899
@@ -1949,6 +1973,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2040898900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040898895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c74e0696e282b46abf43fe43f4b1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 636801714}
+  parameterName:
+  - To Idle
+  - To Idle
+  parameterValue: 0000000001000000
 --- !u!1001 &1325931960153003540
 PrefabInstance:
   m_ObjectHideFlags: 0
