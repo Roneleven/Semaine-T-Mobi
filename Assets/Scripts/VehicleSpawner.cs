@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour
 {
-    public GameObject objectToSpawn; // GameObject to spawn
+    public List<GameObject> prefabToSpawn; // GameObject to spawn
     public List<Transform> spawnPoints; // List of spawn points
     public float spawnDelay = 3f; // Delay between spawning objects
+    public Transform containerEnemies;
 
     private float nextSpawnTime = 0f;
+
+    [SerializeField]
+    private float speedmin;
+    [SerializeField]
+    private float speedMax;
+
+    [SerializeField]
+    private float speedminL;
+    [SerializeField]
+    private float speedMaxL;
+
+
+
 
     void Start()
     {
@@ -32,7 +46,21 @@ public class VehicleSpawner : MonoBehaviour
         int spawnIndex = Random.Range(0, spawnPoints.Count);
         Transform spawnPoint = spawnPoints[spawnIndex];
 
-        // Spawn the object at the chosen spawn point
-        Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+        int randomIndex = Random.Range(0, prefabToSpawn.Count);
+        // Instancie le GameObject correspondant à l'index aléatoire
+        GameObject spawnedObject = Instantiate(prefabToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation, containerEnemies);
+
+
+        // Récupère le GameObject de l'enfant à partir de spawnPoint
+        GameObject childObject = spawnPoint.gameObject;
+        if (childObject.CompareTag("ContreSens"))
+        {
+            Debug.Log("PASTAGSENS");
+            spawnedObject.GetComponent<EnemiesMovement>().speed = Random.Range(speedminL, speedMaxL);
+        }
+        else
+        {
+            spawnedObject.GetComponent<EnemiesMovement>().speed = Random.Range(speedmin, speedMax);
+        }
     }
 }
