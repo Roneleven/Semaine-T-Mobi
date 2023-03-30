@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261363222}
   m_LocalRotation: {x: -0.26453793, y: 0, z: 0, w: 0.9643753}
-  m_LocalPosition: {x: 0, y: 327.80432, z: 595.7378}
+  m_LocalPosition: {x: 0, y: 334.09637, z: 592.58624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   raycastDistance: 100
   spawnRoadTarget: {fileID: 261363223}
   containerRoutes: {fileID: 645197320}
-  routesListe: []
+  route: {fileID: 1325931959452699219, guid: 5f3adb036ec43274c8d68ca3041c5633, type: 3}
 --- !u!114 &747545349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2411,13 +2411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7ff8898dfd8f74f8ecf5eb4dd44b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadPrefab: {fileID: 0}
-  player: {fileID: 0}
-  roadLength: 5
-  segmentLength: 10
-  distanceBeforeRegenerate: 50
-  segments: []
-  distanceSinceLastSegment: 0
 --- !u!1001 &1280485955
 PrefabInstance:
   m_ObjectHideFlags: 0
