@@ -6,14 +6,9 @@ using UnityEngine;
 
 public class FPSController : MonoBehaviour
 {
-    public ShaderData skybox;
     // Start is called before the first frame update
     void Awake()
     {
         Application.targetFrameRate = 60;
-    }
-
-    private void FixedUpdate()
-    {
     }
 }
