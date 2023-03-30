@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 543667525}
   - component: {fileID: 543667524}
   - component: {fileID: 543667526}
+  - component: {fileID: 543667527}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -849,7 +850,7 @@ Camera:
   m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -866,6 +867,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+--- !u!114 &543667527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543667522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d35af20b508d5546ba80581bc1b979a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ssccShader: {fileID: 4800000, guid: 89ec5ce1bd95ed946a65b649164a9c1d, type: 3}
+  effectIntensity: 1
+  distanceFade: 0
+  curvaturePixelRadius: 2
+  curvatureBrights: 2
+  curvatureDarks: 3
+  cavitySamples: 0
+  saturateCavity: 1
+  cavityRadius: 0.25
+  cavityBrights: 3
+  cavityDarks: 2
+  normalsSource: 1
+  debugMode: 0
+  output: 0
 --- !u!1 &554996253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1961,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0a6bc7103410b6a469d198dbbd70e586, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a6bc7103410b6a469d198dbbd70e586, type: 3}
       propertyPath: m_LocalPosition.x
