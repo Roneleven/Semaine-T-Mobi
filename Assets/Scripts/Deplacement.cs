@@ -13,7 +13,7 @@ public class Deplacement : MonoBehaviour
     private float vitesseTMP;
     [Range(0,1)] public float pourcentage = 0.5f;
     private bool touch = true;
-    private RayCast ray;
+    //private RayCast ray;
     //private bool flag;
     
 
