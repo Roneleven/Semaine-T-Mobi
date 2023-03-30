@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261363222}
   m_LocalRotation: {x: -0.26453793, y: 0, z: 0, w: 0.9643753}
-  m_LocalPosition: {x: 0, y: 334.09637, z: 592.58624}
+  m_LocalPosition: {x: 0, y: 313.81458, z: 558.3996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1695,6 +1695,7 @@ MonoBehaviour:
   spawnRoadTarget: {fileID: 261363223}
   containerRoutes: {fileID: 645197320}
   route: {fileID: 1325931959452699219, guid: 5f3adb036ec43274c8d68ca3041c5633, type: 3}
+  chronomax: 6.9999957
 --- !u!114 &747545349
 MonoBehaviour:
   m_ObjectHideFlags: 0
