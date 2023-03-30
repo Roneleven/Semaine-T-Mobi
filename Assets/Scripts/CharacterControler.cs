@@ -19,8 +19,6 @@ public class CharacterControler : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
- 
-
     private void OnEnable()
     {
         LeanTouch.OnFingerDown += LeanTouch_OnFingerDown;

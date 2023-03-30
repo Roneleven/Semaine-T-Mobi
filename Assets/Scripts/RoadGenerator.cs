@@ -8,12 +8,9 @@ public class RoadGenerator : MonoBehaviour
     public Transform spawnRoadTarget; // The empty transform to teleport to
     [SerializeField]
     private Transform containerRoutes;
-    public GameObject route; // Tableau de GameObjects
-    
-    public float chronomax = 6.9999965f;
-    private float chrono = 0f;
+    public GameObject route;
 
-    void FixedUpdate()
+    void Update()
     {
         // Créer un raycast vers le bas depuis la position de ce gameObject
         Ray ray = new Ray(transform.position, Vector3.down);
@@ -26,23 +23,12 @@ public class RoadGenerator : MonoBehaviour
             {
                 Debug.Log("Touché");
                 Destroy(hit.collider.gameObject);
-                //GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
+                GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
 
             }
         }
 
         // Dessiner une ligne pour visualiser le raycast dans la scène Unity
         Debug.DrawLine(transform.position, transform.position + Vector3.down * raycastDistance, Color.red);
-
-        if (chrono >= chronomax)
-        {
-            Debug.Log("SpawnRoute");
-            GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
-            chrono = 0;
-        }
-        else
-        {
-            chrono += 0.1f;
-        }
     }
 }
