@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DestroyHit : MonoBehaviour
+public class RoadGeneratorr: MonoBehaviour
 {
     public LayerMask roadLayer;
     public float raycastDistance = 100f;

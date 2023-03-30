@@ -10,7 +10,9 @@ public class CharacterControler : MonoBehaviour
     public float lerpSpeed;
     public float lerpToMouseSpeed;
     LeanFinger finger;
-    bool hasTouched;
+
+    [HideInInspector] public bool hasTouched;
+    [HideInInspector] public bool isStunned;
     public Transform ogPlayerPos;
     private void Start()
     {
@@ -38,8 +40,11 @@ public class CharacterControler : MonoBehaviour
 
     private void LeanTouch_OnFingerDown(LeanFinger obj)
     {
-        finger = obj;
-        hasTouched = true;
+        if (!isStunned)
+        {
+            finger = obj;
+            hasTouched = true;
+        }
     }
 
     private void FixedUpdate()
