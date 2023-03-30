@@ -1,59 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    public Transform teleportTarget; // The empty transform to teleport to
+    public LayerMask roadLayer;
+    public float raycastDistance = 100f;
+
+    public Transform spawnRoadTarget; // The empty transform to teleport to
     [SerializeField]
     private Transform containerRoutes;
 
-    // Listes de GameObjects pondérées
-    [SerializeField]
-    private List<GameObject> routesList60;
-    [SerializeField]
-    private List<GameObject> routesList30;
-    [SerializeField]
-    private List<GameObject> routesList10;
+    public GameObject route; // Tableau de GameObjects
 
-    private void OnTriggerEnter(Collider other)
+    void FixedUpdate()
     {
-        // Check if the colliding object has the "Road" tag
-        Debug.Log("Trigger entered");
-        if (other.CompareTag("Road"))
+        // CrÃ©er un raycast vers le bas depuis la position de ce gameObject
+        Ray ray = new Ray(transform.position, Vector3.down);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, roadLayer))
         {
-            // Vérifie si la liste n'est pas vide
-            if (routesList60.Count > 0 && routesList30.Count > 0 && routesList10.Count > 0)
+            Debug.Log("ok");
+            // Si le raycast touche un objet avec le tag "Road", le dÃ©truire
+            if (hit.collider.gameObject.CompareTag("Road"))
             {
-                // Génère un nombre aléatoire pour la pondération
-                float randomWeight = Random.Range(0f, 1f);
+                Debug.Log("TouchÃ©");
+                Destroy(hit.collider.gameObject);
+                GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
 
-                // Détermine quelle liste de GameObjects sera utilisée en fonction de la pondération
-                List<GameObject> chosenList = null;
-                if (randomWeight <= 0.6f)
-                {
-                    chosenList = routesList60;
-                }
-                else if (randomWeight <= 0.9f)
-                {
-                    chosenList = routesList30;
-                }
-                else
-                {
-                    chosenList = routesList10;
-                }
-
-                // Génère un index aléatoire pour la liste choisie
-                int randomIndex = Random.Range(0, chosenList.Count);
-
-                // Instancie le GameObject correspondant à l'index aléatoire
-                GameObject spawnedObject = Instantiate(chosenList[randomIndex], teleportTarget.position, teleportTarget.rotation, containerRoutes);
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                Debug.LogWarning("La liste de GameObjects ou le point de spawn est vide !");
             }
         }
+
+        // Dessiner une ligne pour visualiser le raycast dans la scÃ¨ne Unity
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * raycastDistance, Color.red);
     }
 }
