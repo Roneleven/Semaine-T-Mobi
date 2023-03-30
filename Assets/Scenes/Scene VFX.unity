@@ -5813,7 +5813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &601556290
 Transform:
   m_ObjectHideFlags: 0
@@ -11213,6 +11213,8 @@ MonoBehaviour:
     m_Bits: 64
   lerpSpeed: 0.5
   lerpToMouseSpeed: 0.99
+  hasTouched: 0
+  isStunned: 0
   ogPlayerPos: {fileID: 353162002}
 --- !u!65 &1197677629
 BoxCollider:
@@ -11239,7 +11241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aaea6caa350844409802182bc6c90c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceText: {fileID: 780770218}
 --- !u!114 &1197677631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11652,7 +11653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1628419832
 Transform:
   m_ObjectHideFlags: 0
@@ -11789,24 +11790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b4ab1f22360214b8bd0f65f6c61d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheAnimator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  paramIntegerName:
-  - DTo-Idle
-  paramIntegerValue: 01000000
 --- !u!1 &1871460621
 GameObject:
   m_ObjectHideFlags: 0
@@ -12231,8 +12214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 261363223}
   containerRoutes: {fileID: 645197320}
-  routesListe:
-  - {fileID: 1325931959452699219, guid: 5f3adb036ec43274c8d68ca3041c5633, type: 3}
+  routesList60: []
+  routesList30: []
+  routesList10: []
 --- !u!65 &1972785800
 BoxCollider:
   m_ObjectHideFlags: 0
