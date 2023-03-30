@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour
 {
-    public GameObject[] vehicles; // Array of vehicle prefabs to spawn
-    public float spawnDelay = 2f; // Delay between spawning vehicles
-    public float spawnDistance = 50f; // Distance in front of player to spawn vehicles
-    public Transform playerTransform; // Transform of the player
+    public GameObject objectToSpawn; // GameObject to spawn
+    public List<Transform> spawnPoints; // List of spawn points
+    public float spawnDelay = 3f; // Delay between spawning objects
 
-    private float nextSpawnTime;
+    private float nextSpawnTime = 0f;
+
+    void Start()
+    {
+        // Initialize the next spawn time based on the spawn delay
+        nextSpawnTime = Time.time + spawnDelay;
+    }
 
     void Update()
     {
-        // Only spawn a new vehicle if the time has passed the next spawn time
+        // Only spawn a new object if the time has passed the next spawn time
         if (Time.time >= nextSpawnTime)
         {
-            SpawnVehicle();
+            SpawnObject();
             nextSpawnTime = Time.time + spawnDelay;
         }
     }
 
-    void SpawnVehicle()
+    void SpawnObject()
     {
-        // Choose a random vehicle from the array
-        int index = Random.Range(0, vehicles.Length);
-        GameObject vehicle = vehicles[index];
+        // Choose a random spawn point from the list
+        int spawnIndex = Random.Range(0, spawnPoints.Count);
+        Transform spawnPoint = spawnPoints[spawnIndex];
 
-        // Calculate the position to spawn the vehicle at (in front of the player)
-        Vector3 spawnPosition = playerTransform.position + playerTransform.forward * spawnDistance;
-
-        // Spawn the vehicle at the calculated position
-        Instantiate(vehicle, spawnPosition, Quaternion.identity);
+        // Spawn the object at the chosen spawn point
+        Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
     }
 }

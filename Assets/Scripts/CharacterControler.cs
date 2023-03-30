@@ -59,4 +59,11 @@ public class CharacterControler : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y,ogPlayerPos.position.z), lerpSpeed);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Vehicle"))
+        {
+            Debug.Log("hit");
+        }
+    }
 }
