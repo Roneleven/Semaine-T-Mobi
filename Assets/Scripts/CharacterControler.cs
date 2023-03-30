@@ -66,7 +66,7 @@ public class CharacterControler : MonoBehaviour
     {
         if (other.CompareTag("Vehicle"))
         {
-            Debug.Log("hit");
+            GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 }
