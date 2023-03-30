@@ -1190,13 +1190,13 @@ GameObject:
   m_Component:
   - component: {fileID: 747545347}
   - component: {fileID: 747545348}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LastRoadTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &747545347
 Transform:
   m_ObjectHideFlags: 0
@@ -1226,8 +1226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadLayer:
     serializedVersion: 2
-    m_Bits: 64
-  raycastDistance: 100
+    m_Bits: 72
+  raycastDistance: 1000000
   spawnRoadTarget: {fileID: 261363223}
   containerRoutes: {fileID: 645197320}
   routesListe:
@@ -2397,7 +2397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871460621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.204962, y: 0.24, z: 15.375524}
+  m_LocalPosition: {x: -5.204962, y: 0.18, z: 15.375524}
   m_LocalScale: {x: 133.91615, y: 1, z: 779.6211}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2485,7 +2485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1972785799
 MonoBehaviour:
   m_ObjectHideFlags: 0

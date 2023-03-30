@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5658276029532012433}
   - component: {fileID: 6650707916037396064}
   - component: {fileID: 6130747090670072706}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Route_P2_Goudron
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -131,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0eb706ee8a1d81641b13550186a2e3d2, type: 3}
       propertyPath: m_Name
       value: Route_Goudron
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0eb706ee8a1d81641b13550186a2e3d2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb706ee8a1d81641b13550186a2e3d2, type: 3}
