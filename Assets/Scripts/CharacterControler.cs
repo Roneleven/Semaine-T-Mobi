@@ -14,6 +14,9 @@ public class CharacterControler : MonoBehaviour
     [HideInInspector] public bool hasTouched;
     [HideInInspector] public bool isStunned;
     public Transform ogPlayerPos;
+
+    // Ajout des variables pour la contrainte de déplacement
+    public GameObject boundZone;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +64,19 @@ public class CharacterControler : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y,ogPlayerPos.position.z), lerpSpeed);
         }
+
+        // Limite de déplacement sur les axes X et Z en utilisant Mathf.Clamp
+        float minX = boundZone.transform.position.x - boundZone.transform.localScale.x / 2f;
+        float maxX = boundZone.transform.position.x + boundZone.transform.localScale.x / 2f;
+        float newPositionX = transform.position.x;
+        newPositionX = Mathf.Clamp(newPositionX, minX, maxX);
+
+        float minZ = boundZone.transform.position.z - boundZone.transform.localScale.z / 2f;
+        float maxZ = boundZone.transform.position.z + boundZone.transform.localScale.z / 2f;
+        float newPositionZ = transform.position.z;
+        newPositionZ = Mathf.Clamp(newPositionZ, minZ, maxZ);
+
+        transform.position = new Vector3(newPositionX, transform.position.y, newPositionZ);
     }
     private void OnTriggerEnter(Collider other)
     {

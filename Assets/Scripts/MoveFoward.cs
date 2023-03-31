@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class MoveFoward : MonoBehaviour
 {
     public float speed;
@@ -11,7 +10,7 @@ public class MoveFoward : MonoBehaviour
 
     private void Start()
     {
-        if(tag == "Player")
+        if (tag == "Player")
         {
             charC = GetComponent<CharacterControler>();
         }
@@ -19,7 +18,7 @@ public class MoveFoward : MonoBehaviour
 
     void FixedUpdate()
     {
-        //move foward automatically with delta time
+        // Déplacement automatique sur l'axe Z
         transform.position += (Vector3.forward * speed * Time.deltaTime);
 
         if (hit)
@@ -35,6 +34,7 @@ public class MoveFoward : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemies") && tag == "Player")
@@ -45,6 +45,4 @@ public class MoveFoward : MonoBehaviour
             hit = true;
         }
     }
-
-
 }
