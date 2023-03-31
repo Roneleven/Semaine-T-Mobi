@@ -17,11 +17,9 @@ public class RoadGenerator : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, roadLayer))
         {
-            Debug.Log("ok");
             // Si le raycast touche un objet avec le tag "Road", le détruire
             if (hit.collider.gameObject.CompareTag("Road"))
             {
-                Debug.Log("Touché");
                 Destroy(hit.collider.gameObject);
                 GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
 
