@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b3fd99f9-69e4-477a-b42e-1513cfd4b658}">
 		<property name="name">
-			<value>Klaxon</value>
+			<value>Vehicule_Klaxon</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -90,7 +90,7 @@
 	<object class="MixerBusPanner" id="{be232e59-82ab-4618-9dc8-412203836e9c}" />
 	<object class="MultiSound" id="{9257f052-1872-4c83-bc37-8d7864da963f}">
 		<property name="length">
-			<value>12.5</value>
+			<value>0.51000000000000001</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{7d7226dd-87f1-41c6-8831-e685b240cdcc}</destination>
@@ -99,6 +99,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5c6d61ca-10e9-4c23-81ff-50419a1cb9ae}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

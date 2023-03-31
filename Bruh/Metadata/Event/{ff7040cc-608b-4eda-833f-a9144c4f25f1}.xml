@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{ff7040cc-608b-4eda-833f-a9144c4f25f1}">
 		<property name="name">
-			<value>Message notif</value>
+			<value>UI_IG-Notif</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b2b11e51-639a-4e56-ae90-163257feb795}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

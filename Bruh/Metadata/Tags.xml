@@ -4,5 +4,67 @@
 		<property name="name">
 			<value>Master</value>
 		</property>
+		<relationship name="items">
+			<destination>{143891cc-8f1d-4efb-9f9f-fea86c2345fd}</destination>
+			<destination>{b5a2533d-2a76-4324-8df1-2337645b1253}</destination>
+			<destination>{633759b7-9035-4e13-806d-1889368009ff}</destination>
+			<destination>{754cf099-1a01-4df7-8fd4-e166ef158f22}</destination>
+			<destination>{b3deaf00-a0d5-4f7e-9fe2-ab4adf8150c7}</destination>
+			<destination>{fc5d7c15-28f0-45dc-abbd-a9526a6bc715}</destination>
+			<destination>{ca2be1dd-0ad0-4f7b-83e9-33806801268a}</destination>
+			<destination>{ea973866-92cd-4641-b4d5-a56556b7829c}</destination>
+			<destination>{7900e338-9d56-4fc7-85bf-b0b184273a2b}</destination>
+			<destination>{93e6eb2c-a59b-403a-a8f9-8511ace20d03}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{143891cc-8f1d-4efb-9f9f-fea86c2345fd}">
+		<property name="name">
+			<value>async</value>
+		</property>
+	</object>
+	<object class="Tag" id="{b5a2533d-2a76-4324-8df1-2337645b1253}">
+		<property name="name">
+			<value>automation</value>
+		</property>
+	</object>
+	<object class="Tag" id="{633759b7-9035-4e13-806d-1889368009ff}">
+		<property name="name">
+			<value>autopitch-modulator</value>
+		</property>
+	</object>
+	<object class="Tag" id="{754cf099-1a01-4df7-8fd4-e166ef158f22}">
+		<property name="name">
+			<value>fade</value>
+		</property>
+	</object>
+	<object class="Tag" id="{b3deaf00-a0d5-4f7e-9fe2-ab4adf8150c7}">
+		<property name="name">
+			<value>loop-instrument</value>
+		</property>
+	</object>
+	<object class="Tag" id="{fc5d7c15-28f0-45dc-abbd-a9526a6bc715}">
+		<property name="name">
+			<value>parameter</value>
+		</property>
+	</object>
+	<object class="Tag" id="{ca2be1dd-0ad0-4f7b-83e9-33806801268a}">
+		<property name="name">
+			<value>persistent</value>
+		</property>
+	</object>
+	<object class="Tag" id="{ea973866-92cd-4641-b4d5-a56556b7829c}">
+		<property name="name">
+			<value>send</value>
+		</property>
+	</object>
+	<object class="Tag" id="{7900e338-9d56-4fc7-85bf-b0b184273a2b}">
+		<property name="name">
+			<value>single-instrument</value>
+		</property>
+	</object>
+	<object class="Tag" id="{93e6eb2c-a59b-403a-a8f9-8511ace20d03}">
+		<property name="name">
+			<value>spatializer</value>
+		</property>
 	</object>
 </objects>

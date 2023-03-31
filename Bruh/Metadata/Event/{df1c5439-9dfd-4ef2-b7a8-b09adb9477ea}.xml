@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{df1c5439-9dfd-4ef2-b7a8-b09adb9477ea}">
 		<property name="name">
-			<value>Impact Voiture</value>
+			<value>Vehicule_Collision</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -107,6 +107,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{37746b7b-ecfc-489f-ba7c-bc78e630f0dc}">
+		<property name="volume">
+			<value>-20</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -132,6 +135,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f5632625-fd33-447c-9e88-6df2d3ff146a}">
+		<property name="volume">
+			<value>-10.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -155,16 +161,45 @@
 	<object class="MixerBusEffectChain" id="{a105b61d-b8ce-49ee-b96f-e89a16b3fd56}">
 		<relationship name="effects">
 			<destination>{4edd8c2a-74cd-48e5-a0e6-798e75f38d1e}</destination>
+			<destination>{558aea89-d295-4250-bbb2-fdb3ead786c8}</destination>
+			<destination>{7d1129d2-ee2c-4ef3-bacf-cb613c43a321}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{04bca013-af19-4920-9625-3b6fa0694d5a}" />
 	<object class="MixerBusEffectChain" id="{c99b75b7-0da0-4a9c-9286-cdfbecc1ff7e}">
 		<relationship name="effects">
 			<destination>{43500e57-0c62-4042-a7f5-d408489f186a}</destination>
+			<destination>{b0859d06-fcfc-4e4c-bcd0-d30fcce0d1af}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1912329b-7c6e-41d1-bb8f-95b5ddba6cd2}" />
 	<object class="MixerBusFader" id="{095dbae4-b560-4f4a-9aa7-52844294496f}" />
 	<object class="MixerBusFader" id="{4edd8c2a-74cd-48e5-a0e6-798e75f38d1e}" />
+	<object class="SFXReverbEffect" id="{558aea89-d295-4250-bbb2-fdb3ead786c8}">
+		<property name="decayTime">
+			<value>2900</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>44</value>
+		</property>
+		<property name="diffusion">
+			<value>39.5</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{7d1129d2-ee2c-4ef3-bacf-cb613c43a321}">
+		<property name="threshold">
+			<value>-15.5</value>
+		</property>
+		<property name="ratio">
+			<value>1.35000002</value>
+		</property>
+		<property name="attackTime">
+			<value>80</value>
+		</property>
+		<property name="releaseTime">
+			<value>920</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{43500e57-0c62-4042-a7f5-d408489f186a}" />
+	<object class="CompressorEffect" id="{b0859d06-fcfc-4e4c-bcd0-d30fcce0d1af}" />
 </objects>
