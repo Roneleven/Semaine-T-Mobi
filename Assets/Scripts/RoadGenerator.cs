@@ -12,9 +12,24 @@ public class RoadGenerator : MonoBehaviour
 
     public List<GameObject> routeFacile;
     public List<GameObject> routeDifficile;
+    public List<GameObject> routeDifficile2;
+    public int switchDistance = 1000; // Distance pour changer de liste
 
-    [SerializeField]
     private TruckMovement distanceCamion;
+
+    private List<GameObject>[] routeLists; // Tableau contenant toutes les listes
+    private int currentListIndex = 0; // Index de la liste actuelle
+
+    void Start()
+    {
+        // Initialiser le tableau de listes
+        routeLists = new List<GameObject>[3];
+        routeLists[0] = routeFacile;
+        routeLists[1] = routeDifficile;
+        routeLists[2] = routeDifficile2;
+
+        distanceCamion = GameObject.Find("DistanceParcouru").GetComponent<TruckMovement>();
+    }
 
     void Update()
     {
@@ -37,17 +52,15 @@ public class RoadGenerator : MonoBehaviour
 
     void SpawnRoad()
     {
-        if (distanceCamion.distanceTraveled >= 1000)
+        if (distanceCamion.distanceTraveled >= 1500)
         {
-            // Génère un GameObject aléatoire de la liste 2
-            int index = Random.Range(0, routeDifficile.Count);
-            Instantiate(routeDifficile[index], spawnRoadTarget.position, Quaternion.identity);
+            // Changer de liste tous les switchDistance mètres
+            currentListIndex = (currentListIndex + 1) % routeLists.Length;
+            switchDistance += switchDistance; // Mettre à jour la distance pour le prochain changement
         }
-        else
-        {
-            // Génère un GameObject aléatoire de la liste 1
-            int index = Random.Range(0, routeFacile.Count);
-            Instantiate(routeFacile[index], spawnRoadTarget.position, Quaternion.identity);
-        }
+
+        // Générer un GameObject aléatoire de la liste actuelle
+        int index = Random.Range(0, routeLists[currentListIndex].Count);
+        Instantiate(routeLists[currentListIndex][index], spawnRoadTarget.position, Quaternion.identity);
     }
 }
