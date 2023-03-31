@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f989b939-0518-4f45-8e12-c452a6671b0c}">
+		<property name="assetPath">
+			<value>WhatsApp Notification Sound.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.1126530612244894</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa21a4e9-72d1-4079-8a24-652dc8364c68}</destination>
+		</relationship>
+	</object>
+</objects>

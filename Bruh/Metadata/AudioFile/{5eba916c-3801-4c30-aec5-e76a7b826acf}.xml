@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5eba916c-3801-4c30-aec5-e76a7b826acf}">
+		<property name="assetPath">
+			<value>Vehicles, Car, Diesel Engine, Idle, 1000 RPM, Rear, Exterior, Loop SND62061.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>14.990625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa21a4e9-72d1-4079-8a24-652dc8364c68}</destination>
+		</relationship>
+	</object>
+</objects>
