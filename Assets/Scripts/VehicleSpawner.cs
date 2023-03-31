@@ -47,15 +47,14 @@ public class VehicleSpawner : MonoBehaviour
         Transform spawnPoint = spawnPoints[spawnIndex];
 
         int randomIndex = Random.Range(0, prefabToSpawn.Count);
-        // Instancie le GameObject correspondant à l'index aléatoire
+        // Instancie le GameObject correspondant ï¿½ l'index alï¿½atoire
         GameObject spawnedObject = Instantiate(prefabToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation, containerEnemies);
 
 
-        // Récupère le GameObject de l'enfant à partir de spawnPoint
+        // Rï¿½cupï¿½re le GameObject de l'enfant ï¿½ partir de spawnPoint
         GameObject childObject = spawnPoint.gameObject;
         if (childObject.CompareTag("ContreSens"))
         {
-            Debug.Log("PASTAGSENS");
             spawnedObject.GetComponent<EnemiesMovement>().speed = Random.Range(speedminL, speedMaxL);
         }
         else
