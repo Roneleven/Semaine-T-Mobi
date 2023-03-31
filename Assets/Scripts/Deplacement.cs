@@ -31,6 +31,7 @@ public class Deplacement : MonoBehaviour
     void Start()
     {
         vitessemoyenne(vitessemin, vitessemax);
+        
     }
 
     // Update is called once per frame

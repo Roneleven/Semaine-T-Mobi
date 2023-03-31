@@ -10,17 +10,14 @@ public class CharacterControler : MonoBehaviour
     public float lerpSpeed;
     public float lerpToMouseSpeed;
     LeanFinger finger;
-
-    [HideInInspector] public bool hasTouched;
-    [HideInInspector] public bool isStunned;
+    bool hasTouched;
     public Transform ogPlayerPos;
-
-    // Ajout des variables pour la contrainte de déplacement
-    public GameObject boundZone;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+
+ 
 
     private void OnEnable()
     {
@@ -41,11 +38,8 @@ public class CharacterControler : MonoBehaviour
 
     private void LeanTouch_OnFingerDown(LeanFinger obj)
     {
-        if (!isStunned)
-        {
-            finger = obj;
-            hasTouched = true;
-        }
+        finger = obj;
+        hasTouched = true;
     }
 
     private void FixedUpdate()
@@ -64,25 +58,12 @@ public class CharacterControler : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y,ogPlayerPos.position.z), lerpSpeed);
         }
-
-        // Limite de déplacement sur les axes X et Z en utilisant Mathf.Clamp
-        float minX = boundZone.transform.position.x - boundZone.transform.localScale.x / 2f;
-        float maxX = boundZone.transform.position.x + boundZone.transform.localScale.x / 2f;
-        float newPositionX = transform.position.x;
-        newPositionX = Mathf.Clamp(newPositionX, minX, maxX);
-
-        float minZ = boundZone.transform.position.z - boundZone.transform.localScale.z / 2f;
-        float maxZ = boundZone.transform.position.z + boundZone.transform.localScale.z / 2f;
-        float newPositionZ = transform.position.z;
-        newPositionZ = Mathf.Clamp(newPositionZ, minZ, maxZ);
-
-        transform.position = new Vector3(newPositionX, transform.position.y, newPositionZ);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Vehicle"))
         {
-            Debug.Log("hit");
+            GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 }
