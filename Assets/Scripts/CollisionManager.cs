@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour
 {
 public new ParticleSystem particleSystem; // Assign the particle system component in the inspector
+public GameObject vehicle;
 
 void OnTriggerEnter(Collider other)
 {
@@ -15,7 +16,8 @@ void OnTriggerEnter(Collider other)
         {
             particleSystem.Play();
             Destroy(other.gameObject);
+            Destroy(vehicle);
         }
-    }
+    }    
 }
 }
