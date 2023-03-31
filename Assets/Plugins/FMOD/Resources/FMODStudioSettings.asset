@@ -283,8 +283,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: Bruh/Bruh.fspro
+  sourceBankPath: Bruh/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -319,20 +319,20 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131592
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131592
   Platforms:
-  - {fileID: 3811092147499891997}
-  - {fileID: 6509215996528647700}
-  - {fileID: 4878509370457847856}
   - {fileID: -6648092999463222565}
-  - {fileID: -3829150280512915194}
-  - {fileID: 2568450961871410387}
-  - {fileID: -9514562087331327}
   - {fileID: -4440820993511639971}
-  - {fileID: 4406587189224948862}
-  - {fileID: 5880670045910328601}
+  - {fileID: -3829150280512915194}
+  - {fileID: -9514562087331327}
+  - {fileID: 2568450961871410387}
+  - {fileID: 3811092147499891997}
   - {fileID: 3938245819867733838}
+  - {fileID: 4406587189224948862}
+  - {fileID: 4878509370457847856}
+  - {fileID: 5880670045910328601}
+  - {fileID: 6509215996528647700}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &2568450961871410387
 MonoBehaviour:
@@ -736,12 +736,12 @@ MonoBehaviour:
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
   - 46fbfdf3fc43db0458918377fd40293e
   - 0f8eb3f400726694eb47beb1a9f94ce8
-  - b7716510a1f36934c87976f3a81dbf3d
   - 52eb9df5db46521439908db3a29a1bbb
   - e7a046c753c3c3d4aacc91f6597f310d
   - 2c5177b11d81d824dbb064f9ac8527da
   - fd7c55dab0fce234b8c25f6ffca523c1
   - c88d16e5272a4e241b0ef0ac2e53b73d
+  - b7716510a1f36934c87976f3a81dbf3d
   codecChannels:
     Value: []
     HasValue: 0
