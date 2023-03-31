@@ -19,6 +19,6 @@ public class TruckMovement : MonoBehaviour
         distanceTraveled = transform.position.z - startingZPos;
 
         // Update the distanceText TextMeshProUGUI component with the distance traveled
-        distanceText.text = "Distance traveled: " + distanceTraveled.ToString("F2");
+        distanceText.text = distanceTraveled.ToString("F2") + " m";
     }
 }
