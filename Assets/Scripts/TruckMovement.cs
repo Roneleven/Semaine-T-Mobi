@@ -6,6 +6,7 @@ public class TruckMovement : MonoBehaviour
     private float startingZPos;
     [HideInInspector]public float distanceTraveled;
     public TextMeshProUGUI distanceText;
+    public Score score; // Référence au script ScoreManager
 
     void Start()
     {
@@ -20,5 +21,8 @@ public class TruckMovement : MonoBehaviour
 
         // Update the distanceText TextMeshProUGUI component with the distance traveled
         distanceText.text = distanceTraveled.ToString("F2") + " m";
+
+        // Appeler la fonction UpdateScore() du script ScoreManager
+        score.UpdateScore();
     }
 }
