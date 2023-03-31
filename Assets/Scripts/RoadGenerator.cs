@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class RoadGenerator : MonoBehaviour
     public Transform spawnRoadTarget; // The empty transform to teleport to
     [SerializeField]
     private Transform containerRoutes;
-    public GameObject route;
+
+    public List<GameObject> routeFacile;
+    public List<GameObject> routeDifficile;
+
+    private TruckMovement distanceCamion;
 
     void Update()
     {
@@ -21,12 +26,27 @@ public class RoadGenerator : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Road"))
             {
                 Destroy(hit.collider.gameObject);
-                GameObject spawnedObject = Instantiate(route, spawnRoadTarget.position, spawnRoadTarget.rotation, containerRoutes);
+                SpawnRoad();
 
             }
         }
-
         // Dessiner une ligne pour visualiser le raycast dans la scène Unity
         Debug.DrawLine(transform.position, transform.position + Vector3.down * raycastDistance, Color.red);
+    }
+
+    void SpawnRoad()
+    {
+        if (distanceCamion.distanceTraveled >= 1000)
+        {
+            // Génère un GameObject aléatoire de la liste 2
+            int index = Random.Range(0, routeDifficile.Count);
+            Instantiate(routeDifficile[index], transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // Génère un GameObject aléatoire de la liste 1
+            int index = Random.Range(0, routeFacile.Count);
+            Instantiate(routeFacile[index], transform.position, Quaternion.identity);
+        }
     }
 }

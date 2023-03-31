@@ -35,7 +35,7 @@ public class CharacterControler : MonoBehaviour
 
     private void OnDisable()
     {
-        LeanTouch.OnFingerDown -= LeanTouch_OnFingerDown; 
+        LeanTouch.OnFingerDown -= LeanTouch_OnFingerDown;
         LeanTouch.OnFingerUp -= LeanTouch_OnFingerUp;
     }
 
@@ -56,7 +56,7 @@ public class CharacterControler : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(screenPos);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layer))
             {
-                transform.position = Vector3.MoveTowards(transform.position, hit.point, lerpToMouseSpeed);
+                transform.position = Vector3.MoveTowards(transform.position, hit.point + new Vector3(0, 0, 3), lerpToMouseSpeed);
                 //rb.MovePosition(Vector3.Lerp(transform.position, hit.point, lerpSpeed * Time.deltaTime));
             }
         }
