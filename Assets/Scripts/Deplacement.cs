@@ -31,7 +31,6 @@ public class Deplacement : MonoBehaviour
     void Start()
     {
         vitessemoyenne(vitessemin, vitessemax);
-        
     }
 
     // Update is called once per frame
@@ -57,7 +56,7 @@ public class Deplacement : MonoBehaviour
 
                 if (touch == true)
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Klaxon", transform.position);
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Klaxon", transform.position);
                     touch = false;
                 }
 
