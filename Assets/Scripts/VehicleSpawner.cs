@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour
 {
-    public List<GameObject> objectModels; // List of object models to spawn
+    public List<GameObject> prefabToSpawn; // GameObject to spawn
+    public List<Transform> spawnPoints; // List of spawn points
     public float spawnDelay = 3f; // Delay between spawning objects
-    public List<Transform> spawnPoints; // List of spawn points for objects
-    public float minSpeed = 5f; // Minimum speed of spawned objects
-    public float maxSpeed = 15f; // Maximum speed of spawned objects
+    public Transform containerEnemies;
 
     private float nextSpawnTime = 0f;
+
+    [SerializeField]
+    private float speedmin;
+    [SerializeField]
+    private float speedMax;
+
+    [SerializeField]
+    private float speedminL;
+    [SerializeField]
+    private float speedMaxL;
+
+
+
 
     void Start()
     {
         // Initialize the next spawn time based on the spawn delay
-        nextSpawnTime = Time.deltaTime + spawnDelay;
+        nextSpawnTime = Time.time + spawnDelay;
     }
 
     void Update()
@@ -24,27 +36,31 @@ public class VehicleSpawner : MonoBehaviour
         if (Time.time >= nextSpawnTime)
         {
             SpawnObject();
-            nextSpawnTime = Time.deltaTime + spawnDelay;
+            nextSpawnTime = Time.time + spawnDelay;
         }
     }
 
     void SpawnObject()
-{
-    // Choose a random vehicle from the array
-    int index = Random.Range(0, objectModels.Count);
-    GameObject vehiclePrefab = objectModels[index];
+    {
+        // Choose a random spawn point from the list
+        int spawnIndex = Random.Range(0, spawnPoints.Count);
+        Transform spawnPoint = spawnPoints[spawnIndex];
 
-    // Choose a random spawn point from the array
-    int spawnIndex = Random.Range(0, spawnPoints.Count);
-    Transform spawnPoint = spawnPoints[spawnIndex];
+        int randomIndex = Random.Range(0, prefabToSpawn.Count);
+        // Instancie le GameObject correspondant à l'index aléatoire
+        GameObject spawnedObject = Instantiate(prefabToSpawn[randomIndex], spawnPoint.position, spawnPoint.rotation, containerEnemies);
 
-    // Spawn the vehicle at the chosen spawn point with a random speed and fixed Z-axis direction
-    GameObject vehicle = Instantiate(vehiclePrefab, spawnPoint.position, Quaternion.identity);
-    Rigidbody vehicleRigidbody = vehicle.GetComponent<Rigidbody>();
-    float speed = Random.Range(minSpeed, maxSpeed);
-    Vector3 direction = new Vector3(0f, 0f, 1f);
-    vehicleRigidbody.velocity = direction * speed;
-    vehicle.transform.rotation = Quaternion.identity;
-}
 
+        // Récupère le GameObject de l'enfant à partir de spawnPoint
+        GameObject childObject = spawnPoint.gameObject;
+        if (childObject.CompareTag("ContreSens"))
+        {
+            Debug.Log("PASTAGSENS");
+            spawnedObject.GetComponent<EnemiesMovement>().speed = Random.Range(speedminL, speedMaxL);
+        }
+        else
+        {
+            spawnedObject.GetComponent<EnemiesMovement>().speed = Random.Range(speedmin, speedMax);
+        }
+    }
 }
