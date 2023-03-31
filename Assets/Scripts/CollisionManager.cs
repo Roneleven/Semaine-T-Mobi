@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Lofelt.NiceVibrations;
 
 public class CollisionManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ void OnTriggerEnter(Collider other)
         {
             particleSystem.Play();
             Destroy(other.gameObject);
+            Debug.Log("Vibration");
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.Failure);
             Destroy(vehicle);
         }
     }    
