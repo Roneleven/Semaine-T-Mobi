@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{16a64a80-14de-4ee7-acf9-35ac77a6c8a9}">
+		<property name="assetPath">
+			<value>Among Us Impostor Sound Effect.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.799183673469388</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa21a4e9-72d1-4079-8a24-652dc8364c68}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1066c8e9-f772-42c5-8def-b789b8fdd246}">
+		<property name="assetPath">
+			<value>Vehicles, Horn, Car, Audi Q5, Various Lenghts, Exterior, Multiple SND3346 4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.46500000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa21a4e9-72d1-4079-8a24-652dc8364c68}</destination>
+		</relationship>
+	</object>
+</objects>
