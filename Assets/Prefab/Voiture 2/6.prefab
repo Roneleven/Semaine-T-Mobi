@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -5799694614416914656}
   m_Layer: 0
   m_Name: 6
-  m_TagString: Voitures
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
