@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Teleporter
   - Road
+  - Enemies
   - Vehicle
+  - ContreSens
   layers:
   - Default
   - TransparentFX

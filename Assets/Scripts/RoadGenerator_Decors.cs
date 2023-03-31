@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportOnContact : MonoBehaviour
+public class RoadGenerator_Decors : MonoBehaviour
 {
     public Transform teleportTarget; // The empty transform to teleport to
     [SerializeField]
