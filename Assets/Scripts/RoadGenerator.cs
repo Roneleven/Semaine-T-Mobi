@@ -13,6 +13,7 @@ public class RoadGenerator : MonoBehaviour
     public List<GameObject> routeFacile;
     public List<GameObject> routeDifficile;
 
+    [SerializeField]
     private TruckMovement distanceCamion;
 
     void Update()
@@ -42,13 +43,13 @@ public class RoadGenerator : MonoBehaviour
         {
             // Génère un GameObject aléatoire de la liste 2
             int index = Random.Range(0, routeDifficile.Count);
-            Instantiate(routeDifficile[index], transform.position, Quaternion.identity);
+            Instantiate(routeDifficile[index], spawnRoadTarget.position, Quaternion.identity);
         }
         else
         {
             // Génère un GameObject aléatoire de la liste 1
             int index = Random.Range(0, routeFacile.Count);
-            Instantiate(routeFacile[index], transform.position, Quaternion.identity);
+            Instantiate(routeFacile[index], spawnRoadTarget.position, Quaternion.identity);
         }
     }
 }
