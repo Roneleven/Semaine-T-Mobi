@@ -36,6 +36,7 @@ Transform:
   - {fileID: 7406728709032852165}
   - {fileID: 206178441277563660}
   - {fileID: 1627335911356261584}
+  - {fileID: 8244399459883815573}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,6 +113,70 @@ Transform:
   m_Father: {fileID: 1325931959452699228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7806882477448842278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8244399459883815573}
+  - component: {fileID: 1745479462642430223}
+  m_Layer: 0
+  m_Name: FMODEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8244399459883815573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806882477448842278}
+  m_LocalRotation: {x: -0, y: -0.00000008940696, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 30, z: 19.00008}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1325931959452699228}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745479462642430223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806882477448842278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1574739162
+      Data2: 1137457995
+      Data3: 1747885974
+      Data4: 1613983826
+    Path: event:/Vehicule_Moteur
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Volume
+    Value: 0.6
+  OverrideAttenuation: 1
+  OverrideMinDistance: 8.175306
+  OverrideMaxDistance: 25.478518
 --- !u!1001 &4119603300423390629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5998252269814728757, guid: 1971c8a3c774f6643b07ae87803fa1de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1971c8a3c774f6643b07ae87803fa1de, type: 3}
 --- !u!4 &206178441277563660 stripped
@@ -181,6 +250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1325931959452699228}
     m_Modifications:
+    - target: {fileID: 5037592824760071478, guid: b301313fad7b4384e884477ae14f3377, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6224632652083780081, guid: b301313fad7b4384e884477ae14f3377, type: 3}
       propertyPath: m_Name
       value: 1 (3)
@@ -243,6 +316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1325931959452699228}
     m_Modifications:
+    - target: {fileID: 1368236323255178720, guid: f06867d26bcd06244832510ce9cf5976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7296095057170130969, guid: f06867d26bcd06244832510ce9cf5976, type: 3}
       propertyPath: m_RootOrder
       value: 4
