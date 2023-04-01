@@ -5,7 +5,7 @@ using UnityEngine;
 public class VehicleSpawner : MonoBehaviour
 {
     public List<GameObject> prefabToSpawn; // GameObject to spawn
-    public float spawnDelay = 3f; // Delay between spawning objects
+    private float spawnDelay; // Delay between spawning objects
     public Transform containerEnemies;
 
     private float nextSpawnTime = 0f;
@@ -14,7 +14,8 @@ public class VehicleSpawner : MonoBehaviour
     private float speedmin;
     [SerializeField]
     private float speedMax;
-
+    public float ratemin;
+    public float rateMax;
 
 
 
@@ -30,6 +31,7 @@ public class VehicleSpawner : MonoBehaviour
         if (Time.time >= nextSpawnTime)
         {
             SpawnObject();
+            spawnDelay = Random.Range(ratemin, rateMax); 
             nextSpawnTime = Time.time + spawnDelay;
         }
     }

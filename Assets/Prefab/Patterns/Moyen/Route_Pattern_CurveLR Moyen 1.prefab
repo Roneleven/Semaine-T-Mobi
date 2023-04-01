@@ -36,7 +36,6 @@ Transform:
   - {fileID: 8735146178143171721}
   - {fileID: 4756539414742565967}
   - {fileID: 7990263494700894123}
-  - {fileID: 5914842387803910741}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,70 +81,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.054323, y: 1, z: 40.087303}
   m_Center: {x: -0.0044317245, y: 0.44, z: 20}
---- !u!1 &2417528939865170954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5914842387803910741}
-  - component: {fileID: 359348059634589193}
-  m_Layer: 0
-  m_Name: FMODEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5914842387803910741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2417528939865170954}
-  m_LocalRotation: {x: -0, y: -0.00000008940696, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 19.00008}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1325931959452699228}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &359348059634589193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2417528939865170954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1574739162
-      Data2: 1137457995
-      Data3: 1747885974
-      Data4: 1613983826
-    Path: event:/Vehicule_Moteur
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: Volume
-    Value: 0.6
-  OverrideAttenuation: 1
-  OverrideMinDistance: 8.175306
-  OverrideMaxDistance: 25.478518
 --- !u!1 &5780476494181287463
 GameObject:
   m_ObjectHideFlags: 0

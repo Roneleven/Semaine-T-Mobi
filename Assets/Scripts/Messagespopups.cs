@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
 using DG.Tweening;
+using Lofelt.NiceVibrations;
 
 public class Messagespopups : MonoBehaviour
 {
@@ -14,9 +15,7 @@ public class Messagespopups : MonoBehaviour
     private bool flag = true;
     public string[] listeMessages;
     TMP_Text textMessage;
-    private float t;
     public float tempsDanim = 2f;
-    private bool arreteAnim = false ;
     private Image image;
     private int yo =1;
     // Start is called before the first frame update
@@ -29,16 +28,18 @@ public class Messagespopups : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pommedeterre.distanceTraveled >= 250*yo && flag)
+        if (pommedeterre.distanceTraveled >= 500*yo && flag)
         {
             flag = false;
             yo++;
-            image.material.DOFade(1, tempsDanim);
+            image.material.DOFade(0.85f, tempsDanim);
             transform.DOMove(finalPos.position,tempsDanim);
             //afficher le messages
 
             textMessage.text = listeMessages[Random.Range(0, listeMessages.Length)];
             //son de notif
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI_IG-Notif");
             //maintenir un certains temps
             StartCoroutine(TempsDat());
             //fade color texte et message
