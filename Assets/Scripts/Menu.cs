@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
 
     public void OnClick()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI_MENU-Button");
         Time.timeScale = 1;
     }
 }
