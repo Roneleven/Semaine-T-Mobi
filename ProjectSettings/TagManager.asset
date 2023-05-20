@@ -3,17 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Teleporter
+  - Road
+  - Enemies
+  - Vehicle
+  - ContreSens
+  - Roues
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Road
   - Water
   - UI
+  - GroundDetector
   - 
-  - 
-  - 
+  - Post-Processing
   - 
   - 
   - 

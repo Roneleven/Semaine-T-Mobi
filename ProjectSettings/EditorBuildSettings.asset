@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Eden Scene.unity
+    guid: 0879ccb28425b28438ca748521b42b48
   m_configObjects: {}
